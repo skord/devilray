@@ -36,3 +36,5 @@ That's where you can come in.
 * Make some changes.
 * Submit a pull request
 * Have those things. 
+ 
+Can't do those things? Have a wacky idea? Open a Github Issue, I'll see what I can do. 
