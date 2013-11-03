@@ -1,0 +1,6 @@
+tr
+  td= link_to manta_account.manta_username, edit_manta_account_path(manta_account)
+  td= manta_account.manta_host
+  td= manta_account.manta_private_key.present? ? "Yes" : "No"
+  td= manta_account.active?
+

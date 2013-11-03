@@ -1,0 +1,2 @@
+module MantaAccountsHelper
+end

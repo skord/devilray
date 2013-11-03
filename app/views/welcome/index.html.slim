@@ -1,0 +1,10 @@
+.ui.segment.hero
+  h1 Welcome to DevilRay, the Manta Explorer.
+  - if current_user && !current_user.setup?
+    h3 You don't have any Manta Accounts. You should probably #{link_to 'Create One', new_manta_account_path}.
+  - elsif current_user && current_user.setup?
+    h3 You're looking good today.
+  - else
+    h3 #{link_to "Sign In", new_user_session_path} or #{link_to "Sign Up", new_user_registration_path} to browse your Manta data.
+    h3 Don't have a Joyent Account yet?
+    h3 Set one up here: #{link_to "Joyent Sign-up", "https://sso.joyentcloud.com/signup"} then get started back here!

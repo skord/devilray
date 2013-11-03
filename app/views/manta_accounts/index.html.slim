@@ -1,0 +1,22 @@
+h1 Your Manta Accounts
+
+- if @manta_accounts.empty?
+  h3 You Don't have any Manta Accounts. #{link_to "Create One?", new_manta_account_path}
+- else
+  table.ui.table.segment
+    thead
+      tr
+        th Username
+        th API Endpoint
+        th Key Present?
+        th Active
+    tbody
+      = render @manta_accounts
+    tfoot
+      tr
+        th colspan="4"
+          = link_to new_manta_account_path, class: "ui button blue small" do
+            = semantic_icon("user")
+            | New
+
+

@@ -1,0 +1,25 @@
+.ui.menu.inverted
+  = link_to "DevilRay", root_path, class: 'item'
+  - if current_user && current_user.setup?
+    = link_to manta_files_path, class: 'item' do
+      = semantic_icon('file icon')
+      span Files
+    = link_to "#", class: 'item' do
+      = semantic_icon("tasks")
+      span Jobs
+    = link_to "#", class: 'item' do
+      = semantic_icon("dashboard")
+      span Reports
+  .right.menu
+    - if current_user
+      - if current_manta_account
+        = link_to manta_accounts_path, class: 'item' do
+          = semantic_icon('cloud')
+          = current_manta_account.manta_username
+      - else
+        = link_to "Manta Accounts", manta_accounts_path, class: 'item'
+      = link_to "Edit Profile", edit_user_registration_path, class: 'item'
+      = link_to "Log Out", destroy_user_session_path, class: 'item', method: :delete
+    - else
+      = link_to "Sign In", new_user_session_path, class: 'item'
+

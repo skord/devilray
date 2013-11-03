@@ -1,0 +1,18 @@
+h1 Manta Account
+
+table.ui.table.segment
+  tbody
+    tr
+      th Username
+      td= @manta_account.manta_username
+    tr
+      th API Endpoint
+      td= @manta_account.manta_host
+    tr
+      th Private Key Present
+      td= @manta_account.manta_private_key.present? ? "Yes" : "No"
+    tr
+      th Active Now?
+      td= @manta_account.active? ? "Yes" : "No"
+
+= link_to "Back to Account List", manta_accounts_path

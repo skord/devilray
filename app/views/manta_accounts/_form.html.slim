@@ -1,0 +1,8 @@
+.ui.segment.form
+  = simple_form_for(@manta_account) do |f|
+    = f.input :manta_username
+    = f.input :manta_host
+    = f.input :manta_private_key
+    - if @manta_account.user.manta_accounts.present?
+      = f.input :active
+    = f.submit

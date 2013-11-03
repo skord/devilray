@@ -1,0 +1,12 @@
+h1 Editing #{@manta_account.manta_username}
+i Private Keys can only be set when you setup your Manta account for the first time.
+.ui.segment.form
+  = simple_form_for(@manta_account) do |f|
+    = f.input :manta_username
+    = f.input :manta_host
+    - if @manta_account.user.manta_accounts.present?
+      = f.input :active
+    .ui.buttons
+      = f.submit "Update", class: "ui button blue"
+      = link_to "Delete", manta_account_path(@manta_account), class: "ui button red", method: :delete, data: {confirm: "Delete this account?"}
+

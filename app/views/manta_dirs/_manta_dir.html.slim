@@ -1,0 +1,7 @@
+tr
+  td= semantic_icon(file_icon(manta_dir))
+  td= link_to manta_dir.name, manta_files_path(manta_path: manta_dir.full_path)
+  td
+  td= manta_dir.mtime
+  td
+

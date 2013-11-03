@@ -1,0 +1,13 @@
+.ui.segment.crumbbox
+  .ui.breadcrumb
+    = manta_breadcrumbs(@manta_dir.full_path)
+table.ui.table.segment
+  thead
+    tr
+      th
+      th Filename
+      th Size
+      th Mtime
+      th Actions
+  tbody
+    = render @manta_files
