@@ -9,5 +9,9 @@ class MantaFile < MantaObj
     file_status, headers = manta_client.delete_object(full_path)
     file_status
   end
+  
+  def signed_url(valid_for)
+    "https://#{manta_client.gen_signed_url(Time.now + valid_for, :get, full_path)}"
+  end
 
 end
